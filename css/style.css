@@ -1,0 +1,21 @@
+/* Made (with love) by Lex Whalen */
+
+.increm_btn{
+    margin:0;
+    float: left;
+    height:50%;
+    padding:0;
+    width:30px;
+    font-size:10px;
+}
+/* Id's */
+#input_section{
+    margin-top:5px;
+    margin-bottom: 10px;
+}
+#timer_btns{
+    background-color: blue;
+    display:flex;
+    margin:0;
+    flex-direction: column;
+}

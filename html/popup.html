@@ -1,0 +1,154 @@
+<!-- Written (with love) by Lex Whalen -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type = "text/css" href = "../bootstrap5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type = "text/css" href = "../css/style.css">
+	<title>Popup</title>
+
+	<style>
+		body {width: 300px;padding:5px;
+			font-family: 'Courier New', Courier, monospace;
+			background-color: #121212;
+			color:white}
+		a {text-decoration: none;color:white}
+		#display, #settings {margin-top: 5px;}
+		#modify {margin-bottom: 5px;};
+	</style>
+
+</head>
+<body>
+
+	<!-- REMINDER: NO INLINE JS -->
+    <div class="container-fluid" id="popup__content">
+			<h1 id = "h1__title" class = "row justify-content-center">Dual Timer</h1>
+
+				<div id = "timer__display__01" class = "row">
+					<label class="col-2">#1:</label>
+					<p id ="timer-01__time" class = "col-4"></p>
+					<label class="col-2">#2:</label>
+					<p id ="timer-02__time" class = "col-4"></p>
+				</div>
+
+
+
+			<div id = "rounds__display" class = "row">
+				<label class = "col-3">Round:</label>
+				<p id = "rounds__count" class="col-9"></p>
+			</div>
+
+			<div id="timers" class = "row justify-content-center">
+				<div id="timer-01" class = "col-6">
+					<label>Set Timer #1</label>
+
+					<label>Minutes:</label>
+					<div class="d-flex justify-content-md-start" id="input_section">
+						<input type="number" min="00" max ="99" id="timer01_min" 
+						maxlength="2" value="00">
+
+						<div id = "timer_btns">
+							<button class="increm_btn" id="timer01__min_plus5">+5</button>
+							<button class="increm_btn" id="timer01__min_sub5">-5</button>
+						</div>
+						
+						<div id="timer_btns">
+							<button class="increm_btn" id="timer01__min_plus10">+10</button>
+							<button class="increm_btn" id="timer01__min_sub10">-10</button>
+						</div>
+					</div>
+
+					<label for="timer-01__sec">Seconds:</label>
+						<div class="d-flex justify-content-md-start" id="input_section">
+							<input type="number" min="00" max ="99" id="timer01_sec"
+							maxlength="2" value="00">
+								<div id = "timer_btns">
+									<button class="increm_btn" id="timer01__sec_plus5">+5</button>
+									<button class="increm_btn" id="timer01__sec_sub5">-5</button>
+								</div>
+								
+								<div id="timer_btns">
+									<button class="increm_btn" id="timer01__sec_plus10">+10</button>
+									<button class="increm_btn" id="timer01__sec_sub10">-10</button>
+								</div>
+						</div>
+				</div>
+
+				<div id="timer-02" class = "col-6">
+					<label>Set Timer #2</label>
+
+					<label>Minutes:</label>
+
+					<div class="d-flex justify-content-md-start" id="input_section">
+						<input type="number" min="00" max ="99" id="timer02_min" 
+						maxlength="2" value="00">
+
+						<div id = "timer_btns">
+							<button class="increm_btn" id="timer02__min_plus5">+5</button>
+							<button class="increm_btn" id="timer02__min_sub5">-5</button>
+						</div>
+						
+						<div id="timer_btns">
+							<button class="increm_btn" id="timer02__min_plus10">+10</button>
+						<button class="increm_btn" id="timer02__min_sub10">-10</button>
+					</div>
+				</div>
+
+				<label>Seconds:</label>
+
+					<div class="d-flex justify-content-md-start" id="input_section">
+						<input type="number" min="00" max ="99" id="timer02_sec"
+						maxlength="2" value="00">
+						<div id = "timer_btns">
+							<button class="increm_btn" id="timer02__sec_plus5">+5</button>
+							<button class="increm_btn" id="timer02__sec_sub5">-5</button>
+						</div>
+						
+						<div id="timer_btns">
+							<button class="increm_btn" id="timer02__sec_plus10">+10</button>
+							<button class="increm_btn" id="timer02__sec_sub10">-10</button>
+						</div>
+					</div>
+				
+			</div>
+		</div>
+
+
+		<div id="timer__control" class = "row justify-content-center" style="margin-bottom:20px;">
+			<div id = "rounds" class="col-6">
+				<label>Rounds:</label>
+
+					<div class="d-flex justify-content-md-start" id="input_section">
+						<input type="number" min="01" max ="99" id="round_count" 
+						maxlength="2" value="01">
+							<div id = "timer_btns">
+								<button class="increm_btn" id="rounds_plus5">+5</button>
+								<button class="increm_btn" id="rounds_sub5">-5</button>
+							</div>
+							
+							<div id="timer_btns">
+								<button class="increm_btn" id="rounds_plus10">+10</button>
+								<button class="increm_btn" id="rounds_sub10">-10</button>
+							</div>
+					</div>
+				
+			</div>
+			<div id="btns" class="col-6">
+				<label>Controls:</label><br>
+				<button id="btn__set-all-timers">Set</button>
+				<button id="btn__reset-all-timers">Reset</button>
+			
+			</div>
+		</div>
+
+
+		<a href="https://github.com/LexingtonWhalen/ChromeTimer" target = "_blank">Follow the GitHub!</a>
+
+    </div>
+
+		<!-- Popup script -->
+		<script src="../js/popup.js"></script>
+</body>
+</html>
