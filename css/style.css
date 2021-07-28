@@ -19,3 +19,6 @@
     margin:0;
     flex-direction: column;
 }
+#btn__pause{
+    width:110px;
+}

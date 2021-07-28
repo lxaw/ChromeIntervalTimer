@@ -31,8 +31,15 @@ class Timer{
         this.DISPLAY_TIME = "00:00";
 
         // link to the next timer
-        this.NEXT_TIMER = null;
+        // this.NEXT_TIMER = null;
         this.IS_DONE = false;
+
+        this.IS_CURRENT_TIMER = false;
+
+
+        // pausing
+        this.IS_PAUSED = false;
+        this.LAST_TIME = 0;
 
         this.TIMING_INTERVAL;
         this.LINKED_TIMER;
@@ -60,6 +67,10 @@ class Timer{
     startTimer(){
         // reset current duration to init duration
         this.CUR_DURATION = this.DURATION;
+
+        // say this is the current timer
+        this.IS_CURRENT_TIMER = true;
+        this.LINKED_TIMER.IS_CURRENT_TIMER = false;
 
         this.TIMING_INTERVAL = setInterval(this.intervalCheck.bind(this),1000)
     }
@@ -115,8 +126,29 @@ class Timer{
     }
     goToNext(){
         this.clear();
+
+        // say this is not the current timer
+        this.IS_CURRENT_TIMER = false;
+        this.LINKED_TIMER.IS_CURRENT_TIMER = true;
+
         this.LINKED_TIMER.startTimer();
         this.LINKED_TIMER.setDone(false);
+    }
+    pauseUnpause(){
+       if(this.IS_PAUSED){
+           // unpause
+           this.IS_PAUSED = false;
+           // start interval
+            this.TIMING_INTERVAL = setInterval(this.intervalCheck.bind(this),1000)
+       } 
+       else{
+            // paused
+            this.IS_PAUSED = true;
+
+            this.LAST_TIME = this.CUR_DURATION;
+            // stop interval
+            clearInterval(this.TIMING_INTERVAL);
+       }
     }
 
 }

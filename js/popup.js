@@ -6,6 +6,7 @@ var GLOB_BG = chrome.extension.getBackgroundPage();
 
 var GLOB_SET_BTN = document.getElementById('btn__set-all-timers');
 var GLOB_KILL_BTN = document.getElementById('btn__reset-all-timers');
+var GLOB_PAUSE_BTN = document.getElementById("btn__pause");
 
 GLOB_SET_BTN.addEventListener('click',()=>{
     // reset timers
@@ -48,6 +49,39 @@ GLOB_SET_BTN.addEventListener('click',()=>{
 GLOB_KILL_BTN.addEventListener('click',()=>{
     resetAll();
 });
+
+
+GLOB_PAUSE_BTN.addEventListener('click',()=>{
+    // check the current timer
+    if(GLOB_BG.timer01.IS_CURRENT_TIMER){
+        GLOB_BG.timer01.pauseUnpause();
+
+        if(GLOB_BG.timer01.IS_PAUSED){
+            GLOB_PAUSE_BTN.innerText = "Unpause";
+        }else{
+            GLOB_PAUSE_BTN.innerText = "Pause";
+        }
+    }
+    else if(GLOB_BG.timer02.IS_CURRENT_TIMER){
+        GLOB_BG.timer02.pauseUnpause();
+
+        if(GLOB_BG.timer02.IS_PAUSED){
+            GLOB_PAUSE_BTN.innerText = "Unpause";
+        }else{
+            GLOB_PAUSE_BTN.innerText = "Pause";
+        }
+    }
+});
+
+function checkIfPaused(){
+    // check if any timer paused, if so change the html text
+    // this is for reloads of popup page
+    if(GLOB_BG.timer01.IS_PAUSED || GLOB_BG.timer02.IS_PAUSED){
+        GLOB_PAUSE_BTN.innerText = "Unpause";
+    }
+}
+
+
 
 function minToSec(aMin){
     return 60 * aMin;
@@ -158,6 +192,9 @@ mapButton("rounds_sub10",sub10,round_count);
 // for checking correct inputs
 var inputArr = [timer01_min,timer01_sec,timer02_min,timer02_sec,round_count];
 inputArr.forEach(i=>onlyButtonInput(i));
+
+// change text "pause" / "unpause" if pause or not
+checkIfPaused();
 
 setInterval(()=>{
     IntervalUpdate();
