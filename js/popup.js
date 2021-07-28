@@ -96,6 +96,9 @@ function resetAll(){
     document.getElementById('timer-01__time').innerText = "00:00";
     document.getElementById('timer-02__time').innerText = "00:00";
 
+
+    GLOB_PAUSE_BTN.innerText = "Pause";
+
     GLOB_BG.resetAll();
 }
 
