@@ -86,18 +86,15 @@ class Timer{
             }else{
                 this.SND.play();
                 chrome.tabs.create({'url':chrome.extension.getURL("../html/timer_done.html")});
-                console.log("flip timer")
                 
                 this.IS_DONE = true;
                 this.clear();
 
                 GLOB_FLIP_COUNTER.plusCount();
 
-                console.log("counts: " + GLOB_FLIP_COUNTER.getCount());
 
                 if(GLOB_FLIP_COUNTER.getCount() == 2){
                     // completed a cycle
-                    console.log('flip cycle complete');
 
                     GLOB_FLIP_COUNTER.resetCount();
 

@@ -8,6 +8,11 @@
     width:30px;
     font-size:10px;
 }
+.btn__control{
+    height:25px;
+    margin-bottom:-10px;
+    padding:0px;
+}
 /* Id's */
 #input_section{
     margin-top:5px;
@@ -20,5 +25,13 @@
     flex-direction: column;
 }
 #btn__pause{
-    width:110px;
+    width:52px;
+    font-size:7px;
+}
+#btn__reset-all-timers{
+    width:52px;
+    font-size:7px;
+}
+#btn__set-all-timers{
+    width:104px;
 }

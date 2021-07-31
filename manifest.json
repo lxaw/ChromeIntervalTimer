@@ -7,7 +7,7 @@
     },
     "name":"Dual Timer",
     "description": "A dual timer for time-boxing.",
-    "version": "0.2101",
+    "version": "0.2102",
     "manifest_version": 2,
     "background": {
         "persistent":true,
