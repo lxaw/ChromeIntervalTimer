@@ -20,3 +20,6 @@ https://chrome.google.com/webstore/detail/dual-timer/lkoinkcniagamfneakdjgbngnko
 
 ## Installation:
 * Can either do it as a package or soon through the Chrome Extension store.
+
+## ❤️ How to Support ❤️
+- If this code or anyother I have written has helped you, feel free to make a donation at https://www.buymeacoffee.com/whalenlexn.
